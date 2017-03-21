@@ -41,6 +41,7 @@ public class GetSuggestions extends HttpServlet {
         sql += "AND Friend2 NOT IN (SELECT UserSends FROM FriendRequests WHERE UserReceives = '"+user+"')";
  
         System.out.println("sqlFriends: " + sql);
+		System.out.println("Add a new line as an example of a commit");
 
         String sql2 = "SELECT CompanyName FROM CompanyReg ";
         sql2 += "WHERE CompanyID NOT IN (SELECT Comp FROM Following WHERE User = '"+user+"') ";
