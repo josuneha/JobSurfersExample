@@ -22,12 +22,16 @@ public class AcceptFriend extends HttpServlet {
         HttpSession session = req.getSession(false);
         String userReceives = (String)session.getAttribute("user");
         String userSends = req.getParameter("sender");
+		
 
         String sql = "INSERT INTO Friends (Friend1, Friend2) VALUES (";
         sql +=  "'" + userSends + "'";
         sql +=  ", '" + userReceives + "')"; 
         System.out.println("Insert sql: " + sql);
         
+		System.out.println("Example of commit: ");
+        
+		
         try {
             Statement statementInsert=connection.createStatement();
             int num = statementInsert.executeUpdate(sql);
