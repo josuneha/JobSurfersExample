@@ -32,6 +32,8 @@ public class validateAptitudes extends HttpServlet {
 		
         HttpSession session = req.getSession(false);
         String user = (String)session.getAttribute("user");
+	  
+	  System.out.println("Change online");
         
         if (session != null){
             String selectFriend = "SELECT Friend1 As friend FROM Friends WHERE Friend2 = '"+user+"' AND Friend1 IN (SELECT Username FROM Profile) UNION SELECT Friend2 As friend FROM Friends WHERE Friend1 = '"+user+"' AND Friend2 IN (SELECT Username FROM Profile);";
