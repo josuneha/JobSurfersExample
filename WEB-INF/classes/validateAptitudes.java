@@ -28,6 +28,8 @@ public class validateAptitudes extends HttpServlet {
     	//This is the content
         html += "<div class='content' id='turuconnections'>";
 
+		System.out.println("New line to commit");
+		
         HttpSession session = req.getSession(false);
         String user = (String)session.getAttribute("user");
         
